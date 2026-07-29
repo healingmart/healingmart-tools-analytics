@@ -1,0 +1,14 @@
+{
+  "name": "healingmart-tools-analytics",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Privacy-minimized usage analytics and rankings API for HealingMart web tools.",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check api/event.js && node --check api/rankings.js && node --check api/health.js && node --check api/admin/stats.js && node --check lib/config.js && node --check lib/cors.js && node --check lib/redis-rest.js && node --check lib/security.js && node --check lib/time.js && node --check lib/validation.js && node --check public/client/hm-tools-analytics-client.v1.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

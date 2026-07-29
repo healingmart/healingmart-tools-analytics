@@ -1,0 +1,74 @@
+
+> healingmart-tools-analytics@1.0.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: event API accepts privacy-minimized tool events
+ok 1 - event API accepts privacy-minimized tool events
+  ---
+  duration_ms: 31.192823
+  type: 'test'
+  ...
+# Subtest: rankings API returns open and search-click rankings
+ok 2 - rankings API returns open and search-click rankings
+  ---
+  duration_ms: 4.942193
+  type: 'test'
+  ...
+# Subtest: health API verifies Redis connectivity
+ok 3 - health API verifies Redis connectivity
+  ---
+  duration_ms: 0.572963
+  type: 'test'
+  ...
+# Subtest: event API rejects unapproved origins
+ok 4 - event API rejects unapproved origins
+  ---
+  duration_ms: 0.177434
+  type: 'test'
+  ...
+# Subtest: ranking weights use 5/3/1
+ok 5 - ranking weights use 5/3/1
+  ---
+  duration_ms: 0.56483
+  type: 'test'
+  ...
+# Subtest: recent date keys are unique
+ok 6 - recent date keys are unique
+  ---
+  duration_ms: 13.529862
+  type: 'test'
+  ...
+# Subtest: Seoul date key is stable
+ok 7 - Seoul date key is stable
+  ---
+  duration_ms: 0.216001
+  type: 'test'
+  ...
+# Subtest: valid event
+ok 8 - valid event
+  ---
+  duration_ms: 1.4918
+  type: 'test'
+  ...
+# Subtest: rejects query-like or unsafe tool id
+ok 9 - rejects query-like or unsafe tool id
+  ---
+  duration_ms: 0.36961
+  type: 'test'
+  ...
+# Subtest: limit is clamped
+ok 10 - limit is clamped
+  ---
+  duration_ms: 0.203593
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 96.048584

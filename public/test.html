@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HealingMart Analytics Test</title>
+<style>body{font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;margin:0;padding:24px;background:#f4f7fb;color:#13243a}main{max-width:900px;margin:auto}button{margin:4px;padding:10px 14px;border:0;border-radius:10px;background:#1769e8;color:#fff;font-weight:800;cursor:pointer}pre{min-height:180px;padding:18px;white-space:pre-wrap;border:1px solid #d8e2ed;border-radius:14px;background:#fff}</style></head>
+<body><main><h1>Analytics 연결 테스트</h1><p>샘플 이벤트는 <code>webtool:analytics-test</code>에 기록됩니다.</p><button id="health">상태</button><button id="open">실행 이벤트</button><button id="search">검색 선택 이벤트</button><button id="rank">순위</button><pre id="out"></pre></main>
+<script>
+const out=document.getElementById('out');
+async function show(path,options){try{const r=await fetch(path,options);out.textContent=r.status+'\n'+JSON.stringify(await r.json(),null,2);}catch(e){out.textContent=String(e);}}
+document.getElementById('health').onclick=()=>show('/api/health');
+document.getElementById('open').onclick=()=>show('/api/event',{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify({toolId:'webtool:analytics-test',toolType:'webtool',category:'developer',actions:['open']})});
+document.getElementById('search').onclick=()=>show('/api/event',{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify({toolId:'webtool:analytics-test',toolType:'webtool',category:'developer',actions:['open','search_click']})});
+document.getElementById('rank').onclick=()=>show('/api/rankings?limit=12');
+</script></body></html>

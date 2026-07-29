@@ -1,0 +1,4 @@
+
+> healingmart-tools-analytics@1.0.0 check
+> node --check api/event.js && node --check api/rankings.js && node --check api/health.js && node --check api/admin/stats.js && node --check lib/config.js && node --check lib/cors.js && node --check lib/redis-rest.js && node --check lib/security.js && node --check lib/time.js && node --check lib/validation.js && node --check public/client/hm-tools-analytics-client.v1.js
+
